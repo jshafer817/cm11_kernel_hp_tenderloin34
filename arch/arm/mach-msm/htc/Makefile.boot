@@ -1,0 +1,21 @@
+# BOOT OFFSETS FOR HTC DEVICES ONLY
+# MSM8X60
+   zreladdr-$(CONFIG_ARCH_MSM8X60)	:= 0x48008000
+   params_phys-$(CONFIG_ARCH_MSM8X60)	:= 0x48000100
+   initrd_phys-$(CONFIG_ARCH_MSM8X60)	:= 0x49000000
+
+# MSM8960
+   zreladdr-$(CONFIG_ARCH_MSM8960)	:= 0x80408000
+
+# MSM8930
+ifeq ($(CONFIG_MACH_M4_UL),y)
+   zreladdr-$(CONFIG_ARCH_MSM8930)	:= 0x80608000
+else
+   zreladdr-$(CONFIG_ARCH_MSM8930)	:= 0x80408000
+endif
+
+   zreladdr-$(CONFIG_ARCH_APQ8064)	:= 0x80608000
+
+   zreladdr-$(CONFIG_MACH_VISION)       := 0x04008000
+params_phys-$(CONFIG_MACH_VISION)       := 0x04000100
+initrd_phys-$(CONFIG_MACH_VISION)       := 0x05000000
